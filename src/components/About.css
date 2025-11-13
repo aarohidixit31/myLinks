@@ -1,0 +1,111 @@
+/* Centered Section Title with Soft Glow */
+
+
+.section-title {
+  font-size: 1.8rem;
+  color: #eaf2ff;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  letter-spacing: 0.5px;
+  animation: fadeSlideIn 1s ease-out forwards;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 0px;
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  box-shadow: 0 0 8px #3b82f6;
+  border-radius: 2px;
+  animation: underlineGlow 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underlineGlow {
+  to {
+    width: 100%;
+  }
+}
+
+/* About Text - Clean Centered Fade In */
+.about-text {
+  color: #bfcfef;
+  margin: 0 auto 20px auto;
+  max-width: 900px;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeIn 1.4s ease-in forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Skills Grid - Centered Layout */
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Animated Skill Cards */
+.skill-card {
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(124,58,237,0.08), rgba(59,130,246,0.04));
+  border: 1px solid rgba(124,58,237,0.15);
+  color: #eaf2ff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  transition: all 0.35s ease;
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  animation: fadePop 0.7s ease forwards;
+  text-align: center;
+}
+
+/* Sequential Animation Delay for Each Skill */
+.skill-card:nth-child(1) { animation-delay: 0.2s; }
+.skill-card:nth-child(2) { animation-delay: 0.4s; }
+.skill-card:nth-child(3) { animation-delay: 0.6s; }
+.skill-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadePop {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hover Glow */
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.07);
+  box-shadow: 0 0 20px rgba(124,58,237,0.35), 0 0 10px rgba(59,130,246,0.25);
+  background: linear-gradient(145deg, rgba(124,58,237,0.2), rgba(59,130,246,0.12));
+  cursor: pointer;
+}

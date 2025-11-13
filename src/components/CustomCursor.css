@@ -1,0 +1,38 @@
+.cursor-inner, .cursor-outer {
+  position: fixed;
+  left: 0; top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* inner dot */
+.cursor-inner {
+  width: 10px; height: 10px;
+  background: radial-gradient(circle at 30% 30%, #fff, #d1d5ff);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(124,58,237,0.9);
+  transition: transform 0.12s ease, opacity 0.12s;
+  opacity: 0.95;
+}
+
+/* outer ring */
+.cursor-outer {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(124,58,237,0.55);
+  box-shadow: 0 0 30px rgba(59,130,246,0.12);
+  transition: transform 0.12s ease, opacity 0.12s, width 0.18s, height 0.18s;
+  opacity: 0.9;
+  transform: translate(-50%, -50%);
+}
+
+/* hover/active state on links */
+.cursor-hover.cursor-inner, .cursor-inner.cursor-hover {
+  transform: translate(-50%, -50%) scale(1.6);
+}
+.cursor-hover.cursor-outer, .cursor-outer.cursor-hover {
+  transform: translate(-50%, -50%) scale(1.25);
+  border-color: rgba(59,130,246,0.85);
+  box-shadow: 0 0 40px rgba(124,58,237,0.25);
+}

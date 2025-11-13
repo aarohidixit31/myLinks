@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+/* Purple-blue glowing accent variables */
+:root{
+  --bg: #060308;
+  --muted: #9aa7c7;
+  --accent1: #7c3aed; /* purple */
+  --accent2: #3b82f6; /* blue */
+  --glow: rgba(124,58,237,0.18);
+  --glow2: rgba(59,130,246,0.12);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* page layout */
+.App { min-height: 100vh; }
+
+/* subtle animated background radial glows */
+.bg-glow-1, .bg-glow-2 {
+  position: fixed; pointer-events: none; z-index: 0;
+  border-radius: 50%;
+  filter: blur(90px);
+  mix-blend-mode: screen;
+  transition: transform 8s ease;
+}
+.bg-glow-1 {
+  width: 600px; height: 600px; left: -120px; top: -100px;
+  background: radial-gradient(circle at 30% 30%, var(--glow), transparent 40%);
+}
+.bg-glow-2 {
+  width: 500px; height: 500px; right: -100px; bottom: -120px;
+  background: radial-gradient(circle at 70% 70%, var(--glow2), transparent 40%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* small utility */
+.center { display:flex; align-items:center; justify-content:center; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* link focus outline */
+:focus { outline: 3px solid rgba(124,58,237,0.25); outline-offset: 3px; }

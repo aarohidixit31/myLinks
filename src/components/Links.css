@@ -1,0 +1,141 @@
+/* --- Text styling --- */
+.section-title {
+  font-size: 2rem;
+  color: #eaf2ff;
+  margin-bottom: 8px;
+  text-align: center;
+  background: linear-gradient(90deg, #7c3aed, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glowTitle 4s ease-in-out infinite alternate;
+}
+
+.section-sub {
+  color: #bfcff0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* --- Grid layout --- */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-top: 28px;
+  justify-items: center;
+}
+
+/* --- Each link card --- */
+.link-card {
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 18px 16px;
+  border-radius: 18px;
+  background: rgba(30, 30, 50, 0.7);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.1);
+  color: #eaf2ff;
+  text-decoration: none;
+  transform: translateY(0) scale(1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  animation: floatIn 1s ease forwards;
+}
+
+/* Glow animation inside each card */
+.link-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(124,58,237,0.15), rgba(59,130,246,0.15));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover effect */
+.link-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: rgba(124,58,237,0.6);
+  box-shadow: 0 0 35px rgba(124,58,237,0.25), 0 0 60px rgba(59,130,246,0.15);
+}
+.link-card:hover::before {
+  opacity: 1;
+}
+
+/* Icon inside the card */
+.icon-wrap {
+  width: 74px;
+  height: 74px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(124,58,237,0.35), rgba(59,130,246,0.25));
+  box-shadow: 0 0 20px rgba(124,58,237,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.icon-wrap svg {
+  width: 26px;
+  height: 26px;
+  color: #fff;
+  opacity: 0.95;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for icons */
+.link-card:hover .icon-wrap {
+  transform: rotate(8deg) scale(1.1);
+  box-shadow: 0 0 30px rgba(124,58,237,0.4);
+}
+.link-card:hover svg {
+  transform: scale(1.15);
+}
+
+/* Text inside the card */
+.link-info {
+  display: flex;
+  flex-direction: column;
+}
+.link-name {
+  font-weight: 700;
+  color: #eaf2ff;
+  letter-spacing: 0.3px;
+  font-size: 1.05rem;
+}
+.link-action {
+  font-size: 0.85rem;
+  color: #bfcff0;
+  transition: color 0.3s ease;
+}
+.link-card:hover .link-action {
+  color: #a5b4fc;
+}
+
+/* --- Animations --- */
+@keyframes glowTitle {
+  from {
+    filter: drop-shadow(0 0 5px rgba(124,58,237,0.5));
+  }
+  to {
+    filter: drop-shadow(0 0 20px rgba(59,130,246,0.8));
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

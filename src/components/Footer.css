@@ -1,0 +1,4 @@
+#footer { border-top: 1px solid rgba(124,58,237,0.05); padding: 26px 20px; color: #aebce8; }
+.footer-inner { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+.footer-links a { margin-left: 12px; color: #dfe9ff; opacity:0.88; }
+.heart { filter: drop-shadow(0 0 6px rgba(124,58,237,0.6)); }
