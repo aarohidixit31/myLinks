@@ -29,7 +29,7 @@ export default function Hero() {
 
       <div className="container hero-inner">
         <div className="hero-left">
-          <img src="/my.jpg" alt="Aarohi" className="hero-photo" />
+          <img src="/my.JPG" alt="Aarohi" className="hero-photo" />
         </div>
 
         <div className="hero-right">
